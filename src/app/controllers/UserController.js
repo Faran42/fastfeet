@@ -18,6 +18,13 @@ class UserController {
   }
 
   async update(req, res) {
+    const { email, oldPassword } = req.body;
+
+    const user = await User.findByPk(req.userId);
+
+    if (email !== user.email) {
+    }
+
     return res.json({ ok: true });
   }
 }
